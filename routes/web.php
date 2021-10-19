@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.index');
 })->name('dashboard');
-
+Route::get('/form', function () {
+    return view('form');
+})->name('form');
 // Route::get('/konten-vidio', function () {
 //     return view('admin.kontenVidio.index');
 // })->name('konten-vidio');
