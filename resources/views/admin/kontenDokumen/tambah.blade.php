@@ -9,7 +9,7 @@
           <div class="row px-xl-5 px-sm-4 px-3">
                 
               <div class="card-body">
-                <form role="form text-left" action="{{route('kontenDokumen.store')}}">
+                <form role="form text-left" action="{{route('kontenDokumen.store')}}" method="POST">
                   @csrf
                   <div class="mb-3">
                     <label for="exampleFormControlSelect1">Judul</label>

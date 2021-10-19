@@ -9,7 +9,7 @@
           <div class="row px-xl-5 px-sm-4 px-3">
                 
               <div class="card-body">
-                <form role="form text-left" action="{{route('kontenVidio.store')}}">
+                <form role="form text-left" action="{{route('kontenVidio.store')}}" method="POST">
                   @csrf
                   <div class="mb-3">
                     <label for="exampleFormControlSelect1">Judul</label>

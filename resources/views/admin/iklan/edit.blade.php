@@ -9,15 +9,12 @@
             <div class="row px-xl-5 px-sm-4 px-3">
                   
                 <div class="card-body">
-                  <form role="form text-left" action="{{route('kelas.store')}}" method="POST">
+                  <form role="form text-left" action="{{route('iklan.update',$iklan->id)}}" method="POST"  enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="mb-3">
-                      <label for="exampleFormControlSelect1">Nama Kelas</label>
-                      <input type="text" class="form-control" name="nama" placeholder="Nama" aria-label="Name" aria-describedby="email-addon">
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-                      <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi" aria-label="Name" aria-describedby="email-addon">
+                      <label for="exampleFormControlSelect1">Gambar</label><br>
+                      <input type="file" name="gambar" placeholder="">
                     </div>
                 
                     

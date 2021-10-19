@@ -2,6 +2,8 @@
 use App\Http\Controllers\KontenVidioController;
 use App\Http\Controllers\KontenDokumenController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\IklanController;
+use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,5 +38,7 @@ Route::get('/form', function () {
 Route::resource('kontenVidio', KontenVidioController::class);
 Route::resource('kontenDokumen', KontenDokumenController::class);
 Route::resource('kelas', KelasController::class);
+Route::resource('artikel', ArtikelController::class);
+Route::resource('iklan', IklanController::class);
 
 

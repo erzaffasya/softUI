@@ -9,17 +9,20 @@
             <div class="row px-xl-5 px-sm-4 px-3">
                   
                 <div class="card-body">
-                  <form role="form text-left" action="{{route('kelas.store')}}" method="POST">
+                  <form role="form text-left" action="{{route('artikel.store')}}" method="POST"  enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                      <label for="exampleFormControlSelect1">Nama Kelas</label>
-                      <input type="text" class="form-control" name="nama" placeholder="Nama" aria-label="Name" aria-describedby="email-addon">
+                      <label for="exampleFormControlSelect1">Judul</label>
+                      <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-                      <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi" aria-label="Name" aria-describedby="email-addon">
+                      <label for="exampleFormControlSelect1">Gambar</label><br>
+                      <input type="file" name="gambar">
                     </div>
-                
+                    <div class="mb-3">
+                      <label for="exampleFormControlSelect1">Deskripsi</label>
+                      <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi">
+                    </div>
                     
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
