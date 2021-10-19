@@ -9,7 +9,7 @@
             <div class="row px-xl-5 px-sm-4 px-3">
                   
                 <div class="card-body">
-                  <form role="form text-left" action="{{route('kelas.update',$kelas->id)}}">
+                  <form role="form text-left" action="{{route('kelas.update',$kelas->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
@@ -18,12 +18,12 @@
                     </div>
                     <div class="mb-3">
                       <label for="exampleFormControlSelect1">Deskripsi Kelas</label>
-                      <input type="text" class="form-control" name="deskripsi" value="{{$kelas->nama}}" placeholder="Deskripsi" aria-label="Name" aria-describedby="email-addon">
+                      <input type="text" class="form-control" name="deskripsi" value="{{$kelas->deskripsi}}" placeholder="Deskripsi" aria-label="Name" aria-describedby="email-addon">
                     </div>
                 
                     
                     <div class="text-center">
-                      <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
+                      <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
                     </div>
                   </form>
                 </div>

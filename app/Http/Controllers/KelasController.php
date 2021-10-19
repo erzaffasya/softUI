@@ -31,12 +31,12 @@ class KelasController extends Controller
             ->with('success', 'kelas Berhasil Ditambahkan');
     }
 
-    public function show($id)
-    {
-        $kelass = Kelas::where('id', $id)->first();
-        return view('admin.kelas.show', compact('kelas'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+    // public function show($id)
+    // {
+    //     $kelas = Kelas::where('id', $id)->first();
+    //     return view('admin.kelas.show', compact('kelas'))
+    //         ->with('i', (request()->input('page', 1) - 1) * 5);
+    // }
 
 
     public function edit($id)
@@ -54,7 +54,7 @@ class KelasController extends Controller
         $kelas->save();
 
         return redirect()->route('kelas.index')
-        ->with('edit', 'pengumuman Berhasil Diedit');
+        ->with('edit', 'Kelas Berhasil Diedit');
     }
 
     public function destroy($id)
