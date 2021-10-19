@@ -14,7 +14,7 @@ class KelasController extends Controller
 
     public function create()
     {
-        return view('admin.kelas.addkelas');
+        return view('admin.kelas.tambah');
     }
 
     public function store(Request $request)
@@ -43,7 +43,7 @@ class KelasController extends Controller
     {
         $kelas = Kelas::find($id);
 
-        return view('admin.kelas.editkelas', compact('kelas'));
+        return view('admin.kelas.edit', compact('kelas'));
     }
 
     public function update(Request $request, $id)

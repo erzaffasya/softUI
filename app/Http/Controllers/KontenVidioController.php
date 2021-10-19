@@ -17,7 +17,7 @@ class KontenVidioController extends Controller
     public function create()
     {
         $kelas = Kelas::all();
-        return view('admin.kontenVidio.addvidio',compact('kelas'));
+        return view('admin.kontenVidio.tambah',compact('kelas'));
     }
 
     public function store(Request $request)
@@ -52,7 +52,7 @@ class KontenVidioController extends Controller
     {
         $kontenVidio = KontenVideo::find($id);
         $kelas = Kelas::all();
-        return view('admin.kontenVidio.editvidio', compact('kontenVidio','kelas'));
+        return view('admin.kontenVidio.edit', compact('kontenVidio','kelas'));
     }
 
     public function update(Request $request, $id)

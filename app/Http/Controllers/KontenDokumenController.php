@@ -16,7 +16,7 @@ class KontenDokumenController extends Controller
     public function create()
     {
         $kelas = Kelas::all();
-        return view('admin.kontenDokumen.adddokumen',compact('kelas'));
+        return view('admin.kontenDokumen.tambah',compact('kelas'));
     }
 
     public function store(Request $request)
@@ -63,7 +63,7 @@ class KontenDokumenController extends Controller
         $kelas = Kelas::all();
         $kontenDokumen = KontenDokumen::find($id);
 
-        return view('admin.kontenDokumen.editdokumen', compact('kontenDokumen','kelas'));
+        return view('admin.kontenDokumen.edit', compact('kontenDokumen','kelas'));
     }
 
     public function update(Request $request, $id)
