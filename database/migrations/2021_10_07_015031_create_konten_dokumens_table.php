@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateKontenDokumensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('konten_dokumen', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('username',15)->unique();
-            $table->string('email');
-            $table->string('password');
-            $table->enum('level', ['admin', 'user']);
-            $table->rememberToken();
+            $table->string('judul');
+            $table->string('deskripsi');
+            $table->string('file');
+            $table->string('bab');
+            $table->foreignId("kelas_id")->constrained("kelas")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
+
         });
     }
 
@@ -32,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('konten_dokumens');
     }
 }
