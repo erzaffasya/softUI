@@ -3,7 +3,7 @@
     <div class="col-6">
       <div class="card mb-4">
         <div class="card-header pb-0">
-          <h6>Form Field</h6>
+          <h6>Tambah Data Iklan</h6>
         </div>
         <div class="row px-xl-5 px-sm-4 px-3">
 

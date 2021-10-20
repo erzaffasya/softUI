@@ -1,11 +1,12 @@
 <x-app-layout>
-  <<<<<<< HEAD=======<<<<<<< Updated upstream=======<div class="row">
-    <div class="col-12">
+  <div class="row">
+    <div class="col-6">
       <div class="card mb-4">
         <div class="card-header pb-0">
           <h6>Edit Konten Video</h6>
         </div>
         <div class="row px-xl-5 px-sm-4 px-3">
+
           <div class="card-body">
             <form role="form text-left" action="{{route('kontenVidio.update',$kontenVidio->id)}}" method="POST" enctype="multipart/form-data">
               @csrf
@@ -28,7 +29,6 @@
                 <label for="exampleFormControlSelect1">BAB</label>
                 <input type="number" class="form-control" value="{{$kontenVidio->bab}}" name="bab">
               </div>
-
               <div class="mb-3">
                 <label for="exampleFormControlSelect1">Kelas</label>
                 <select class="form-control" name="kelas_id" id="exampleFormControlSelect1">{{$kontenVidio->judul}}
@@ -37,11 +37,6 @@
                   @endforeach
                 </select>
               </div>
-
-              <div class="text-center">
-                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
-              </div>
-            </form>
             <div class="text-center">
               <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Simpan</button>
             </div>
@@ -50,5 +45,5 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 </x-app-layout>
