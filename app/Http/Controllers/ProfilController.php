@@ -38,7 +38,43 @@ class ProfilController extends Controller
             'no_hp' => $request->no_hp,
             'gambar' => $file_name,
         ]);
-      return redirect()->route('iklan.index')
-        ->with('edit', 'iklan Berhasil Diedit');
+        return redirect()->route('profil.index')
+            ->with('success', 'Data Pengguna Berhasil Ditambahkan');
+    }
+
+    public function edit($id)
+    {
+        $profil = Profil::find($id);
+
+        return view('admin.profil.edit', compact('profil'));
+    }
+
+    public function update(Request $request, $id)
+    {
+
+
+        $profil = Profil::findOrFail($id);
+        $profil->nama = $request->nama;
+        $profil->no_hp = $request->no_hp;  
+
+        if (isset($request->gambar)){
+            $extention = $request->gambar->extension();
+            $file_name = time().'.'.$extention;
+            $request->gambar->move(public_path('assets/foto/profil'),$file_name);
+            $profil->gambar = $file_name;
+        }else{}
+
+        $profil->save();
+
+        return redirect()->route('profil.index')
+        ->with('edit', 'Profil Berhasil Diedit');
+    }
+
+    public function destroy($id)
+    {
+        Profil::where('id', $id)->delete();
+
+        return redirect()->route('profil.index')
+            ->with('delete', 'Profil Berhasil Dihapus');
     }
 }

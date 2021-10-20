@@ -1,14 +1,13 @@
 <x-app-layout>
-  <div class="row">
-    <div class="col-6">
+  <<<<<<< HEAD=======<<<<<<< Updated upstream=======<div class="row">
+    <div class="col-12">
       <div class="card mb-4">
         <div class="card-header pb-0">
-          <h6>Form Field</h6>
+          <h6>Edit Konten Video</h6>
         </div>
         <div class="row px-xl-5 px-sm-4 px-3">
-
           <div class="card-body">
-            <form role="form text-left" action="{{route('kontenVidio.update',$kontenVidio->id)}}" method="POST">
+            <form role="form text-left" action="{{route('kontenVidio.update',$kontenVidio->id)}}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
               <div class="mb-3">
@@ -43,9 +42,13 @@
                 <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Submit</button>
               </div>
             </form>
+            <div class="text-center">
+              <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Simpan</button>
+            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    </div>
 </x-app-layout>

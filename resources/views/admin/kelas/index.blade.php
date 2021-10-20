@@ -21,13 +21,38 @@
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Deskripsi</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
+                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                 </tr>
               </thead>
 
               <tbody>
                 @foreach ($kelas as $item)
                 <tr>
+                  <td>
+                    <div class="d-flex px-2 py-1">
+                      <div class="d-flex flex-column justify-content-center">
+                        <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">{{ $item->nama }}</p>
+                  </td>
+                  <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
+                  </td>
+                  <td>
+                    <div class="ms-auto text-end">
+                      <form action="{{route('kelas.destroy', $item->id)}}" method="POST" style="display: inline">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="far fa-trash-alt me-2">Delete</i></button>
+                      </form>
+                      <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kelas.edit', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                    </div>
+                  </td>
+                </tr>
+                {{-- <tr>
                   <td>{{ $loop->iteration }}</td>
                   <td>{{ $item->nama }}</td>
                   <td>{{ $item->deskripsi }}</td>
@@ -41,7 +66,7 @@
                       </form>
                     </div>
                   </td>
-                </tr>
+                </tr> --}}
                 @endforeach
               </tbody>
 
