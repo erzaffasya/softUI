@@ -1,4 +1,32 @@
 <x-app-layout>
+<<<<<<< Updated upstream
+=======
+  <div class="row">
+    <div class="col-6">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+          <h6>Form Field</h6>
+        </div>
+        <div class="row px-xl-5 px-sm-4 px-3">
+
+          <div class="card-body">
+            <form role="form text-left" action="{{route('kontenDokumen.store')}}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div class="mb-3">
+                <label for="exampleFormControlSelect1">Judul</label>
+                <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlSelect1">Deskripsi</label>
+                <input type="text" class="form-control" name="deskripsi" placeholder="Masukkan Deskripsi">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlSelect1">File Dokumen</label>
+                <br>
+                <input type="file" class="" name="file">
+              </div>
+>>>>>>> Stashed changes
 
   <div class="row">
       <div class="col-6">

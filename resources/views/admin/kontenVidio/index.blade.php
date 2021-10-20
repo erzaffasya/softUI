@@ -25,30 +25,46 @@
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Link</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Bab</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kelas</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
+                  <th class="text-end text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
                 </tr>
               </thead>
 
               <tbody>
                 @foreach ($kontenVidio as $item)
-                <tr>
-                  <td>{{ $loop->iteration }}</td>
-                  <td>{{ $item->judul }}</td>
-                  <td>{{ $item->deskripsi }}</td>
-                  <td>{{ $item->link }}</td>
-                  <td>{{ $item->bab }}</td>
-                  <td>{{ $item->kelas->nama }}</td>
-                  <td>
-                    <div class="btn-group" role="group">
-                      <a href="{{route('kontenVidio.edit', $item->id)}}" class="btn btn-primary"><i class="material-icons">edit</i></a>
-                      <form action="{{route('kontenVidio.destroy', $item->id)}}" method="POST">
-                        @csrf
-                        @method("DELETE")
-                        <button type="submit" class="btn btn-danger"><i class="material-icons">delete</i></button>
-                      </form>
-                    </div>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-xs font-weight-bold mb-0">{{ $item->judul }}</p>
+                    </td>
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold">{{ $item->deskripsi }}</span>
+                    </td>
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold">{{ $item->link }}</span>
+                    </td>
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold">{{ $item->bab }}</span>
+                    </td>
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold">{{ $item->kelas->nama }}</span>
+                    </td>
+                    <td>
+                      <div class="ms-auto text-end">
+                        <form action="{{route('kontenVidio.destroy', $item->id)}}" method="POST" style="display: inline">
+                          @csrf
+                          @method("DELETE")
+                          <button type="submit" class="btn btn-link text-danger text-gradient px-3 mb-0"><i class="far fa-trash-alt me-2">Delete</i></button>
+                        </form>
+                        <a class="btn btn-link text-dark px-3 mb-0" href="{{route('kontenVidio.edit', $item->id)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                      </div>
+                    </td>
+                  </tr>
                 @endforeach
               </tbody>
 
