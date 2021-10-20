@@ -1,6 +1,4 @@
 <x-app-layout>
-
-
   <div class="col-md-12 mb-lg-0 mb-4">
     <div class="card mt-4">
       <div class="card-header pb-0 p-3">

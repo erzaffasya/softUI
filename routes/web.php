@@ -4,6 +4,7 @@ use App\Http\Controllers\KontenDokumenController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,5 +41,6 @@ Route::resource('kontenDokumen', KontenDokumenController::class);
 Route::resource('kelas', KelasController::class);
 Route::resource('artikel', ArtikelController::class);
 Route::resource('iklan', IklanController::class);
+Route::resource('profil', ProfilController::class);
 
 
