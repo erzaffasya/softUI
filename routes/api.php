@@ -7,6 +7,7 @@ use App\Http\Controllers\API\KontenDokumenController;
 use App\Http\Controllers\API\KontenVideoController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\DownloadControler;
+use App\Http\Controllers\API\ArtikelController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,17 @@ Route::get('/dokumen/search/{name}', [KontenDokumenController::class, 'search'])
 Route::get('/video', [KontenVideoController::class, 'index']);
 Route::get('/video/{id}', [KontenVideoController::class, 'show']);
 Route::get('/vido/search/{name}', [KontenVideoController::class, 'search']);
+
+//Route Artikel
+Route::get('/artikel', [ArtikelController::class, 'index']);
+Route::get('/artikel/show/{id}', [ArtikelController::class, 'show']);
+Route::get('/artikel/search/{judul}', [ArtikelController::class, 'search']);
+Route::post('/artikel/store', [ArtikelController::class, 'store']);
+Route::put('artikel/update/{id}', [ArtikelController::class, 'update']);
+Route::delete('artikel/delete/{id}', [ArtikelController::class, 'destroy']);
+
+//Route Iklan
+Route::get('/iklan', [IklanController::class, 'index']);
 
 // Download Route
 Route::get('download/{filename}', [DownloadControler::class, 'index']);
